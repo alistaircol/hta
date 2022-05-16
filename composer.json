@@ -1,0 +1,36 @@
+{
+    "name": "alistaircol/hta",
+    "description": "Howsy Technical Assessment",
+    "authors": [
+        {
+            "name": "Ally",
+            "email": "me@ac93.uk"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.4",
+        "league/container": "^4.2",
+        "spatie/data-transfer-object": "^2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Alistaircol\\Hta\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "tests": [
+            "composer exec -- phpunit --testdox"
+        ],
+        "coverage": [
+            "composer exec -- phpunit --path-coverage"
+        ]
+    }
+}
