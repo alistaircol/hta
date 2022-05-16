@@ -26,7 +26,7 @@ help:
 	@echo 'Usage: make [${BLUE}subcommand${RESET}]'
 	@echo 'subcommands:'
 	@echo '  ${GREEN}shell${RESET}    Mounts current ${WHITE}pwd${RESET} and starts ${WHITE}sh${RESET} session in a ${WHITE}docker${RESET} image'
-	@echo '  ${GREEN}tests${RESET}    Mounts current ${WHITE}pwd${RESET} and runs ${WHITE}composer run tests${RESET} in a ${WHITE}docker${RESET} image'
+	@echo '  ${GREEN}test${RESET}     Mounts current ${WHITE}pwd${RESET} and runs ${WHITE}composer run tests${RESET} in a ${WHITE}docker${RESET} image'
 	@echo '  ${GREEN}coverage${RESET} Mounts current ${WHITE}pwd${RESET} and runs ${WHITE}composer run coverage${RESET} in a ${WHITE}docker${RESET} image. ${YELLOW}NOTE: this uses an alternative image, ${LIGHTPURPLE}${docker_dev_image}${RESET}'
 
 ephemeral_docker_args = --rm \
