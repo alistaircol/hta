@@ -2,7 +2,8 @@
 
 namespace Alistaircol\Hta\Domain\Basket\Concerns;
 
-use Alistaircol\Hta\Domain\Basket\ProductInterfaceCollection;
+use Alistaircol\Hta\Domain\Basket\DataTransferObjects;
+use Alistaircol\Hta\Domain\Basket\DataTransferObjects\ProductInterfaceCollection;
 
 interface BasketInterface
 {
@@ -21,6 +22,14 @@ interface BasketInterface
      * @return BasketInterface
      */
     public function add(ProductInterface $product): BasketInterface;
+
+    /**
+     * Get a product by id from basket.
+     *
+     * @param string $id
+     * @return ProductInterface|null
+     */
+    public function get(string $id): ?ProductInterface;
 
     /**
      * Remove the given product from the basket.

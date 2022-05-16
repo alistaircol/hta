@@ -82,6 +82,16 @@ final class InMemoryBackingStoreBasketTest extends AbstractBasketTestCase
         $this->assertEquals(0, $product->getDiscountedPrice($offer));
     }
 
+    public function test_get_product_from_basket(): void
+    {
+        $product = $this->getProductPhotography();
+
+        $this->basket->add($product);
+        $item = $this->basket->get($product->getId());
+
+        $this->assertEquals($product, $item);
+    }
+
     public function test_applying_a_valid_offer_to_empty_basket_gives_total_of_zero(): void
     {
         $this->assertEquals(0, $this->basket->getTotal());

@@ -5,6 +5,7 @@ namespace Alistaircol\Hta\Domain\Basket;
 use Alistaircol\Hta\Domain\Basket\Concerns\BasketInterface;
 use Alistaircol\Hta\Domain\Basket\Concerns\OfferInterface;
 use Alistaircol\Hta\Domain\Basket\Concerns\ProductInterface;
+use Alistaircol\Hta\Domain\Basket\DataTransferObjects\ProductInterfaceCollection;
 
 class InMemoryBasket extends AbstractBasket
 {

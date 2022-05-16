@@ -5,6 +5,7 @@ namespace Alistaircol\Hta\Domain\Basket;
 use Alistaircol\Hta\Domain\Basket\Concerns\BasketInterface;
 use Alistaircol\Hta\Domain\Basket\Concerns\OfferInterface;
 use Alistaircol\Hta\Domain\Basket\Concerns\ProductInterface;
+use Alistaircol\Hta\Domain\Basket\DataTransferObjects\ProductInterfaceCollection;
 use Alistaircol\Hta\Domain\Basket\Exceptions\OfferDiscountOutOfBoundsException;
 use Alistaircol\Hta\Domain\Basket\Exceptions\ProductPriceOutOfBoundsException;
 
@@ -43,6 +44,11 @@ abstract class AbstractBasket implements BasketInterface
         }
 
         return $this;
+    }
+
+    public function get(string $id): ?ProductInterface
+    {
+        return $this->items->offsetGet($id);
     }
 
     /**

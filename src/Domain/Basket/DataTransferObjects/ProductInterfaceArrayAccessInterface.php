@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Alistaircol\Hta\Domain\Basket;
+namespace Alistaircol\Hta\Domain\Basket\DataTransferObjects;
 
 use Alistaircol\Hta\Domain\Basket\Concerns\ProductInterface;
 

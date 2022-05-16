@@ -11,14 +11,18 @@ class PriceFormatter
 
     public function __construct(string $iso4217 = 'GBP')
     {
-        $code = strtoupper($iso4217);
-        $code = trim($code);
+        $code = $this->canonicaliseIso4217Code($iso4217);
 
         if (strlen($code) !== 3) {
             throw BasketTotalFormattingInvalidIso4217CodeException::code($code);
         }
 
         $this->iso4217 = $code;
+    }
+
+    private function canonicaliseIso4217Code(string $iso4217): string
+    {
+        return strtoupper(trim($iso4217));
     }
 
     public function format(int $units): string
