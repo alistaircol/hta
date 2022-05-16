@@ -9,10 +9,13 @@
             <directory suffix="Test.php">tests</directory>
         </testsuite>
     </testsuites>
-    <coverage>
+    <coverage pathCoverage="false">
         <include>
             <directory suffix=".php">src/</directory>
         </include>
+        <exclude>
+            <file>src/Domain/Basket/DataTransferObjects/ProductInterfaceCollection.php</file>
+        </exclude>
         <report>
             <html outputDirectory="build/coverage" />
         </report>

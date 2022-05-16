@@ -29,7 +29,8 @@
             "composer exec -- phpunit --testdox"
         ],
         "coverage": [
-            "composer exec -- phpunit --path-coverage"
+            "mkdir -p build/coverage",
+            "composer exec -- phpunit --coverage-html=./build/coverage"
         ]
     }
 }
