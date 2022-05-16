@@ -16,6 +16,9 @@ Run locally, or make commands described below.
 
 ![make coverage](https://raw.githubusercontent.com/alistaircol/hta/main/.github/make_coverage.png)
 
+
+![coverage](https://raw.githubusercontent.com/alistaircol/hta/main/.github/coverage.png)
+
 ## Summary
 
 Using `spatie/data-transfer-objects` to create a basket containing products, and optionally discounts/offers. 
