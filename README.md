@@ -34,7 +34,7 @@ make coverage
 ## Running the Application
 
 * `composer install` or `make install`
-* `composer run tests` or `make tests`
+* `composer run tests` or `make test`
 
 ![make](https://raw.githubusercontent.com/alistaircol/hta/main/.github/make.png)
 
