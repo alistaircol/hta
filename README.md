@@ -49,7 +49,7 @@ make coverage
 * `composer run phplint` or `make phplint`
 * `composer run phpcs` or `make phpcs`
 
-![make phplint](https://raw.githubusercontent.com/alistaircol/hta/main/.github/make_tests.png)
+![make phplint](https://raw.githubusercontent.com/alistaircol/hta/main/.github/make_phplint.png)
 
 ## Coverage
 
