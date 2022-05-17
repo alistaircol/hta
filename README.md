@@ -33,13 +33,27 @@ make coverage
 
 ## Running the Application
 
+* `composer install` or `make install`
+* `composer run tests` or `make tests`
+
 ![make](https://raw.githubusercontent.com/alistaircol/hta/main/.github/make.png)
 
 ## Tests
 
+* `composer run tests` or `make test`
+
 ![make test](https://raw.githubusercontent.com/alistaircol/hta/main/.github/make_tests.png)
 
+## Linting
+
+* `composer run phplint` or `make phplint`
+* `composer run phpcs` or `make phpcs`
+
+![make phplint](https://raw.githubusercontent.com/alistaircol/hta/main/.github/make_tests.png)
+
 ## Coverage
+
+* `composer run coverage` or `make coverage`
 
 ![make coverage](https://raw.githubusercontent.com/alistaircol/hta/main/.github/make_coverage.png)
 

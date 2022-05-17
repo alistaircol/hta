@@ -54,7 +54,7 @@ install:
 test:
 	@${docker_run} ${docker_image} composer run tests
 
-lint:
+phplint:
 	@${docker_run} ${docker_image} composer run phplint
 
 phpcs:
