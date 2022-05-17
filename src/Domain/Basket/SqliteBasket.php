@@ -8,9 +8,18 @@ use Alistaircol\Hta\Domain\Basket\Concerns\BasketInterface;
 use Alistaircol\Hta\Domain\Basket\Concerns\OfferInterface;
 use Alistaircol\Hta\Domain\Basket\Concerns\ProductInterface;
 use Alistaircol\Hta\Domain\Basket\DataTransferObjects\ProductInterfaceCollection;
+use DomainException;
+use PDO;
 
-class InMemoryBasket extends AbstractBasket
+class SqliteBasket extends AbstractBasket
 {
+    protected PDO $pdo;
+
+    public function setPdo(PDO $pdo)
+    {
+        $this->pdo = $pdo;
+    }
+
     /**
      * Create a new empty basket with optional offer.
      *
@@ -28,42 +37,25 @@ class InMemoryBasket extends AbstractBasket
         return $this;
     }
 
-    /**
-     * Add a product to the basket.
-     *
-     * @param ProductInterface $product
-     * @return BasketInterface
-     */
+    public function applyOffer(OfferInterface $offer): BasketInterface
+    {
+        throw new DomainException('Not implemented');
+    }
+
     public function add(ProductInterface $product): BasketInterface
     {
         parent::add($product);
-        $this->items->offsetSet($product->getId(), $product);
 
-        return $this;
+        throw new DomainException('Not implemented');
     }
 
-    /**
-     * Remove a product from the basket.
-     *
-     * @param ProductInterface $product
-     * @return BasketInterface
-     */
     public function remove(ProductInterface $product): BasketInterface
     {
-        if ($this->items->offsetExists($product->getId())) {
-            $this->items->offsetUnset($product->getId());
-        }
-
-        return $this;
+        throw new DomainException('Not implemented');
     }
 
-    /**
-     * Get items in the basket.
-     *
-     * @return ProductInterfaceCollection
-     */
     public function getItems(): ProductInterfaceCollection
     {
-        return $this->items;
+        throw new DomainException('Not implemented');
     }
 }

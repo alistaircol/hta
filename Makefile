@@ -16,18 +16,24 @@ docker_image = webdevops/php:8.1-alpine
 docker_dev_image = webdevops/php-dev:8.1-alpine
 
 help:
-	@echo 'This is a PHP 8.1 application. If you have it (and ${WHITE}composer${RESET}) installed locally, then simply run:'
+	@echo 'This is a PHP 8.1 application.'
+	@echo 'If you have it (and ${WHITE}composer${RESET}) installed locally, then simply run:'
 	@echo '  ${GREEN}composer install${RESET}'
 	@echo '  ${GREEN}composer run tests${RESET}'
 	@echo ''
 	@echo 'This Makefile has some options to run the application in ${WHITE}docker${RESET} if you do not have 8.1 locally.'
 	@echo 'The ${WHITE}docker${RESET} image is ${LIGHTPURPLE}${docker_image}${RESET}'
 	@echo ''
+	@echo '${WHITE}----------------------------------------${RESET}'
+	@echo ''
 	@echo 'Usage: make [${BLUE}subcommand${RESET}]'
 	@echo 'subcommands:'
 	@echo '  ${GREEN}shell${RESET}    Mounts current ${WHITE}pwd${RESET} and starts ${WHITE}sh${RESET} session in a ${WHITE}docker${RESET} image'
 	@echo '  ${GREEN}test${RESET}     Mounts current ${WHITE}pwd${RESET} and runs ${WHITE}composer run tests${RESET} in a ${WHITE}docker${RESET} image'
-	@echo '  ${GREEN}coverage${RESET} Mounts current ${WHITE}pwd${RESET} and runs ${WHITE}composer run coverage${RESET} in a ${WHITE}docker${RESET} image. ${YELLOW}NOTE: this uses an alternative image, ${LIGHTPURPLE}${docker_dev_image}${RESET}'
+	@echo '  ${GREEN}phplint${RESET}  Mounts current ${WHITE}pwd${RESET} and runs ${WHITE}composer run phplint${RESET} in a ${WHITE}docker${RESET} image'
+	@echo '  ${GREEN}phpcs${RESET}    Mounts current ${WHITE}pwd${RESET} and runs ${WHITE}composer run phpcs${RESET} in a ${WHITE}docker${RESET} image'
+	@echo '  ${GREEN}coverage${RESET} Mounts current ${WHITE}pwd${RESET} and runs ${WHITE}composer run coverage${RESET} in a ${WHITE}docker${RESET} image'
+	@echo '           ${YELLOW}NOTE: this uses an alternative image, ${LIGHTPURPLE}${docker_dev_image}${RESET}'
 
 ephemeral_docker_args = --rm \
 	--tty \
@@ -47,6 +53,12 @@ install:
 
 test:
 	@${docker_run} ${docker_image} composer run tests
+
+lint:
+	@${docker_run} ${docker_image} composer run phplint
+
+phpcs:
+	@${docker_run} ${docker_image} composer run phpcs
 
 coverage:
 	@${docker_run} --env XDEBUG_MODE=coverage ${docker_dev_image} composer run coverage

@@ -2,6 +2,20 @@
 
 Technical Assessment 05/22. OOP PHP.
 
+## Summary
+
+* Using `spatie/data-transfer-objects` as a backbone (model) to create a basket containing products, and optionally discounts/offers.
+* Using `league/container` to instantiate baskets
+  * Implemented an `InMemoryBasket` which is essentially a collection of DTOs using `ArrayAccess` operations
+  * Stubbed an `SqliteMemoryBasket` which is a more real-world integration
+* Using `phpunit/phpunit` for unit tests
+  * `composer run tests` or `make test` for running test suite
+  * `composer run coverage` or `make coverage` for generating code coverage report
+* Using `overtrue/phplint` for checking code syntax
+  * `composer run phplint` or `make phplint`
+* Using `squizlabs/php_codesniffer` to detect code style violations
+  * `composer run phpcs` or `make phpcs`
+
 ## Running
 
 ```bash
@@ -29,13 +43,7 @@ make coverage
 
 ![make coverage](https://raw.githubusercontent.com/alistaircol/hta/main/.github/make_coverage.png)
 
-
 ![coverage](https://raw.githubusercontent.com/alistaircol/hta/main/.github/coverage.png)
-
-## Summary
-
-Using `spatie/data-transfer-objects` to create a basket containing products, and optionally discounts/offers.
-
 
 ## Brief
 

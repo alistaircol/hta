@@ -1,8 +1,9 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Alistaircol\Hta\Domain\Basket\Concerns;
 
-use Alistaircol\Hta\Domain\Basket\DataTransferObjects;
 use Alistaircol\Hta\Domain\Basket\DataTransferObjects\ProductInterfaceCollection;
 
 interface BasketInterface
@@ -13,7 +14,7 @@ interface BasketInterface
      * @param OfferInterface|null $offer
      * @return BasketInterface
      */
-    public function create(?OfferInterface $offer): BasketInterface;
+    public function create(?OfferInterface $offer = null): BasketInterface;
 
     /**
      * Add a new product to the basket.

@@ -2,18 +2,27 @@
 
 namespace Tests;
 
+use Alistaircol\Hta\Application;
+use Alistaircol\Hta\Domain\Basket\Concerns\BasketInterface;
 use Alistaircol\Hta\Domain\Basket\Exceptions\BasketTotalFormattingForIso4217NotImplementedException;
 use Alistaircol\Hta\Domain\Basket\Exceptions\BasketTotalFormattingInvalidIso4217CodeException;
 use Alistaircol\Hta\Domain\Basket\Exceptions\OfferDiscountOutOfBoundsException;
 use Alistaircol\Hta\Domain\Basket\Exceptions\ProductPriceOutOfBoundsException;
 use Alistaircol\Hta\Domain\Basket\InMemoryBasket;
 
-final class InMemoryBackingStoreBasketTest extends AbstractBasketTestCase
+final class BasketTest extends AbstractBasketTestCase
 {
     protected function setUp(): void
     {
         parent::setUp();
-        $this->basket = (new InMemoryBasket())->create();
+
+        $app = new Application();
+        $container = $app->container();
+
+        /** @var BasketInterface $implementation */
+        $implementation = $container->get(BasketInterface::class);
+
+        $this->basket = $implementation->create();
     }
 
     public function test_create_new_basket_has_no_items(): void

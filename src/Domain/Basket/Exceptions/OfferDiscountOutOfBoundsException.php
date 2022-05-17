@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Alistaircol\Hta\Domain\Basket\Exceptions;
 
@@ -12,6 +14,9 @@ class OfferDiscountOutOfBoundsException extends OutOfBoundsException
         $name = $offer->getName();
         $discount = $offer->getDiscountMultiplier();
 
-        throw new self("The offer ($name) discount (percentage to be subtracted) is out of bounds. Given {$discount} - it must be (0-100).");
+        throw new self(
+            "The offer ($name) discount (percentage to be subtracted) is out of bounds. "
+            . "Given {$discount} - it must be (0-100)."
+        );
     }
 }
