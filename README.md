@@ -2,6 +2,10 @@
 
 Technical Assessment 05/22. OOP PHP.
 
+<p>
+<a href="https://static.ac93.uk/hta-coverage/index.html"><img src="https://img.shields.io/badge/coverage-100%25-brightgreen" alt="Test Coverage"></a>
+</p>
+
 ## Summary
 
 * Using `spatie/data-transfer-objects` as a backbone (model) to create a basket containing products, and optionally discounts/offers.
@@ -53,7 +57,13 @@ make coverage
 
 ## Coverage
 
+<p>
+<a href="https://static.ac93.uk/hta-coverage/index.html"><img src="https://img.shields.io/badge/coverage-100%25-brightgreen" alt="Test Coverage"></a>
+</p>
+
 * `composer run coverage` or `make coverage`
+
+You can see the coverage report [here](https://static.ac93.uk/hta-coverage/index.html)
 
 ![make coverage](https://raw.githubusercontent.com/alistaircol/hta/main/.github/make_coverage.png)
 
